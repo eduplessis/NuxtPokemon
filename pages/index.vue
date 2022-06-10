@@ -3,7 +3,7 @@
     <NuxtLink
       :to="{
         name: 'pokemon-id',
-        params: { id: pokemon.name, url: pokemon.url },
+        params: { id: pokemon.name },
       }"
       >{{ pokemon.name }}</NuxtLink
     >

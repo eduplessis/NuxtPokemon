@@ -7,5 +7,4 @@ const route = useRoute();
 
 <template>
   {{ route.params.id }}
-  {{ route.params.url }}
 </template>
