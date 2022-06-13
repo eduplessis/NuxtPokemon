@@ -1,13 +1,14 @@
 <template>
   <div class="container">
-    <div
-      v-if="selectedPokemon"
-      class="container-over"
-      @click="selectedPokemon = ''"
-    >
-      <card v-if="selectedPokemon" :pokemon="selectedPokemon" />
-    </div>
-
+    <transition>
+      <div
+        v-if="selectedPokemon"
+        class="container-over"
+        @click="selectedPokemon = ''"
+      >
+        <card v-if="selectedPokemon" :pokemon="selectedPokemon" />
+      </div>
+    </transition>
     <div v-if="pokemons" v-for="pokemon in pokemons.results">
       <button class="btn" @click="selectedPokemon = pokemon.name">
         {{ pokemon.name }}
@@ -27,8 +28,10 @@ body {
 }
 .container {
   display: flex;
+  align-content: stretch;
   flex-wrap: wrap;
   gap: 1rem;
+  padding: 2rem;
 }
 .btn {
   display: inline-block;
