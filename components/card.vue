@@ -9,7 +9,9 @@ const {
   pending,
   refresh,
   error,
-} = await useFetch(`https://pokeapi.co/api/v2/pokemon/${pok.value}`);
+} = await useFetch(() => `/pokemon/${pok.value}`, {
+  baseURL: 'https://pokeapi.co/api/v2',
+});
 
 watch(pok, () => {
   console.log(pok);
