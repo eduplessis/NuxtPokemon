@@ -1,13 +1,18 @@
 <template>
   <div class="container">
-    <card v-if="selectedPokemon" :pokemon="selectedPokemon" />
+    <div
+      v-if="selectedPokemon"
+      class="container-over"
+      @click="selectedPokemon = ''"
+    >
+      <card v-if="selectedPokemon" :pokemon="selectedPokemon" />
+    </div>
+
     <div v-if="pokemons" v-for="pokemon in pokemons.results">
       <button class="btn" @click="selectedPokemon = pokemon.name">
         {{ pokemon.name }}
       </button>
     </div>
-
-    <!-- <card /> -->
   </div>
 </template>
 <script setup>
@@ -37,5 +42,17 @@ body {
 .btn:hover {
   background: pink;
   color: purple;
+}
+
+.container-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
 }
 </style>

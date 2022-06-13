@@ -12,7 +12,9 @@ const {
 } = await useFetch(() => `/pokemon/${pok.value}`, {
   baseURL: 'https://pokeapi.co/api/v2',
 });
-
+onMounted(() => {
+  refresh();
+});
 watch(pok, () => {
   console.log(pok);
   refresh();
