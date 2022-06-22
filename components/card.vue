@@ -26,6 +26,8 @@ onMounted(() => {
         <div class="hp">
           {{ pokemonData.stats[0].base_stat }}
           {{ pokemonData.stats[0].stat.name }}
+
+          allo benoit
         </div>
       </div>
 
